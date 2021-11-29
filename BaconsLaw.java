@@ -1,4 +1,4 @@
-// This class was written in equal parts by Christian Neij and Christoffer Öhman
+// This code was written in equal parts by Christian Neij and Christoffer Öhman
 
 import java.io.BufferedReader;
 import java.io.FileReader;
