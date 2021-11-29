@@ -1,4 +1,4 @@
-// This class was written in equal parts by Christian Neij and Christoffer Öhman
+// This class was written in equal parts by Christian Neij and Christoffer Ã–hman
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -12,7 +12,7 @@ import java.util.Scanner;
  * The class BaconsLaw reads a file containing many actors and movies and then asks the user for an actor name to play the game "Bacon's Law" with.
  * A shortest path graph algorithm is used to find a path to Kevin Bacon from the chosen actor and the program presents the path and its length to the user.
  *
- * @author 	Christian Neij and Christoffer Öhman (or Oehman in the english alphabet)
+ * @author 	Christian Neij and Christoffer Ã–hman (or Oehman in the english alphabet)
  */
 public class BaconsLaw {
 
@@ -20,9 +20,9 @@ public class BaconsLaw {
     private final static String FILE_PATH = "path to the textfile containing actor names and movies";
 
 
-    protected static final HashMap<String, Actor> actors = new HashMap<> ();
-    protected static final HashMap<String, LinkedList<Actor>> castInMovies = new HashMap<> ();
-    protected static Actor bacon = null;
+    private static final HashMap<String, Actor> actors = new HashMap<> ();
+    private static final HashMap<String, LinkedList<Actor>> castInMovies = new HashMap<> ();
+    private static Actor bacon = null;
 
     public static void main(String[] args) {
         BaconsLaw baconsLaw = new BaconsLaw ();
@@ -34,7 +34,7 @@ public class BaconsLaw {
      * It continues prompting the user for actors until the user enters "exit".
      *
      * @return	void
-     * @author	Christian Neij and Christoffer Öhman (or Oehman in the english alphabet)
+     * @author	Christian Neij and Christoffer Ã–hman (or Oehman in the english alphabet)
      */
     private void run() {
         final String prefix = "<a>";
@@ -67,7 +67,7 @@ public class BaconsLaw {
      * @param	previous	String object containing the path constructed recursively, empty if it's the first call to the method.
      * @param	actor		The actor in the path from the user chosen actor to Kevin Bacon currently being looked at during the recursive String building.
      * @return 	String		Returns the String object built during recursion.
-     * @author 	Christian Neij and Christoffer Öhman (or Oehman in the english alphabet)
+     * @author 	Christian Neij and Christoffer Ã–hman (or Oehman in the english alphabet)
      */
     private static String getPath(String previous, String actor) {
         Actor adjacentActor = actors.get (actor);
@@ -84,9 +84,9 @@ public class BaconsLaw {
      *
      * @param	filePath	Text file containing names of actors along with movies they've been in.
      * @return 	void
-     * @author 	Christian Neij and Christoffer Öhman (or Oehman in the english alphabet)
+     * @author 	Christian Neij and Christoffer Ã–hman (or Oehman in the english alphabet)
      */
-    protected static void readFile(String filePath) {
+    private static void readFile(String filePath) {
         BufferedReader br = null;
         Actor currentActor = null;
 
@@ -150,9 +150,9 @@ public class BaconsLaw {
      * @param 	movieCast	Is a HashMap which uses movie names as keys and contains lists of actors who participated in the movies as its values.
      * @return 	void
      * @throws 	NullPointerException If either the startActor or the movieCast parameters are null then the exception is thrown.
-     * @author 	Christian Neij & Christoffer Öhman (or Oehman in the english alphabet)
+     * @author 	Christian Neij & Christoffer Ã–hman (or Oehman in the english alphabet)
      */
-    protected static void shortestPath(Actor startActor, HashMap<String, LinkedList<Actor>> movieCast) {
+    private static void shortestPath(Actor startActor, HashMap<String, LinkedList<Actor>> movieCast) {
         if (startActor == null || movieCast == null) {
             throw new NullPointerException ();
         }
